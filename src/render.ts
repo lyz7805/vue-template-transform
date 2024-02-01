@@ -314,7 +314,7 @@ export class Render {
             case '$$array_wrap':
                 return `<template ${attrStr}>${childrenStr}</template>`
             case '$$condition_wrap':
-                return `<template ${attrStr}>${childrenStr}</template>`
+                return attrStr ? `<template ${attrStr}>${childrenStr}</template>` : `${childrenStr}`
             case '$$vforwrap':
                 return `<template v-for="(${_root.attrsMap.vforParamsStr}) in ${_root.attrsMap.vforListStr}">${childrenStr}</template>`
             default:
